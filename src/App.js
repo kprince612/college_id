@@ -212,44 +212,6 @@ function App() {
         </div>
         </>
       )}
-
-      {savedCards.length > 0 && (
-        <div className="older-cards">
-          <h2>Previously Generated Cards</h2>
-          <div className="cards-grid">
-            {savedCards.map(card => (
-              <div key={card.id} className="card-item">
-                <p className="card-header">{card.name} ({card.rollNumber})</p>
-                <button 
-                  onClick={() => {
-                    const node = document.createElement('div');
-                    node.className = `id-card ${templateClass} card-export`;
-                    node.innerHTML = `
-                      <p><strong>Name:</strong> ${card.name}</p>
-                      <p><strong>Roll Number:</strong> ${card.rollNumber}</p>
-                      <p><strong>Class &amp; Division:</strong> ${card.classDivision}</p>
-                      <p><strong>Rack Number:</strong> ${card.rackNumber}</p>
-                      <p><strong>Bus Route:</strong> ${card.busRoute}</p>
-                      ${card.allergies.length ? `<p><strong>Allergies:</strong> ${card.allergies.join(', ')}</p>` : ''}
-                    `;
-                    htmlToImage.toPng(node)
-                      .then(dataUrl => {
-                        const link = document.createElement('a');
-                        link.download = `${card.name}_${card.rollNumber}_id-card.png`;
-                        link.href = dataUrl;
-                        link.click();
-                      })
-                      .catch(err => console.error(err));
-                  }}
-                  className="btn btn-download-small"
-                >
-                  Download Card
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Student ID Card Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based Student ID Card Generator that allows users (for example, school administrators or students) to enter student data, preview a smart ID card with a QR code, and download the generated card as a PNG image. The project is styled using standard CSS (no Tailwind CSS), and it includes features like template switching and persistent card storage via localStorage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Student Data Form:**  
+  Capture student details such as:
+  - Name
+  - Roll Number
+  - Class & Division (dropdown)
+  - Allergies (multi-select)
+  - Photo Upload (with preview)
+  - Rack Number (an identifier typically used to denote storage or seating assignments)
+  - Bus Route Number (dropdown)
 
-### `npm start`
+- **Smart ID Card Preview:**  
+  Generates a preview of the ID card displaying:
+  - Student information and photo
+  - List of allergies (if any)
+  - Rack number and bus route
+  - A QR code that encodes a sanitized version of the student data (excluding large fields like the photo) with an adjustable error correction level
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Download Functionality:**  
+  Allows users to download the generated ID card as a PNG image using `html-to-image`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Template Switching:**  
+  Users can switch between two design templates that use different styling classes for the ID card.
 
-### `npm test`
+- **Persistent Data (Bonus Feature):**  
+  Saved cards are stored in `localStorage` so that users can view and download previously generated cards.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies & Libraries
 
-### `npm run build`
+- **React (v18+)** – for building the user interface.
+- **qrcode.react** – for generating QR codes. (Note: Uses the `QRCodeCanvas` component.)
+- **html-to-image** – for exporting DOM elements as PNG images.
+- **Plain CSS** – for styling the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone or Download the Repository:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git clone https://github.com/kprince612/college_id
+   cd student-id-card-generator

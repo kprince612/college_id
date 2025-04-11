@@ -1,38 +1,153 @@
-.App {
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Headers */
+.header, .id-card-section h2, .older-cards h2 {
   text-align: center;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Form Styles */
+.student-form {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group input[type="file"],
+.form-group select[multiple] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.form-group small {
+  color: #777;
+}
+
+/* Photo Preview */
+.photo-preview {
+  margin-top: 10px;
+  max-height: 100px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
+
+.btn-download {
+  display: block;
+  margin: 20px auto;
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-download:hover {
+  background-color: #0069d9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-download-small {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.btn-download-small:hover {
+  background-color: #5a32a3;
+}
+
+/* Template Switcher */
+.template-switcher {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ID Card Styles */
+.id-card {
+  padding: 20px;
+  border: 2px solid #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Template variants */
+.template1 {
+  background-color: #fff;
+  color: #000;
+}
+
+.template2 {
+  background-color: #cce5ff;
+  color: #333;
+  border: 4px solid #004085;
+  border-radius: 8px;
+}
+
+/* Card Photo */
+.card-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* QR Code */
+.qr-code {
+  margin-top: 15px;
+}
+
+/* Older Cards */
+.older-cards {
+  margin-top: 30px;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.card-header {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
